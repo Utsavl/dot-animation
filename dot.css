@@ -1,0 +1,62 @@
+/* *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+} */
+
+#dotContainer{
+
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #001300;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    animation: changeColor 5s linear infinite;
+}
+
+@keyframes changeColor{
+
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+.dots{
+
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+
+.dots::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background : greenyellow;
+    transform: scale(0.1);
+    box-shadow: 0 0 10px greenyellow,
+    0 0 20px greenyellow,
+    0 0 40px greenyellow,
+    0 0 60px greenyellow,
+    0 0 80px greenyellow,
+    0 0 100px greenyellow;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: 2s;
+}
+
+.dots:hover::before{
+
+    transform: scale(1);
+    transition: 0s;
+}
